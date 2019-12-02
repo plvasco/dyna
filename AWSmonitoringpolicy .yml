@@ -1,0 +1,38 @@
+
+CreateTestDBPolicy:
+  Type: 'AWS::IAM::ManagedPolicy'
+  Properties:
+    Description: Policy for creating a test database
+    Path: /
+    PolicyDocument:
+      Version: 2012-10-17
+      Statement:
+        "Effect": "Allow",
+        "Action": [
+        "autoscaling:DescribeAutoScalingGroups",
+        "cloudwatch:GetMetricData",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeInstances",     
+        "ec2:DescribeVolumes",             
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeTags",
+        "elasticloadbalancing:DescribeInstanceHealth",
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:DescribeRules",
+        "elasticloadbalancing:DescribeTargetHealth",
+        "rds:DescribeDBInstances",
+        "rds:DescribeEvents",
+        "rds:ListTagsForResource",
+        "dynamodb:ListTables",
+        "dynamodb:ListTagsOfResource",
+        "lambda:ListFunctions",
+        "lambda:ListTags",
+        "elasticbeanstalk:DescribeEnvironments",
+        "elasticbeanstalk:DescribeEnvironmentResources",
+        "s3:ListAllMyBuckets",
+        "sts:GetCallerIdentity",
+        "cloudformation:ListStackResources",
+        "tag:GetResources",
+        "tag:GetTagKeys"
+      ],
+    "TestDBGroup": "*"
